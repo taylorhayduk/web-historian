@@ -28,7 +28,17 @@ exports.initialize = function(pathsObj){
 exports.readListOfUrls = function(){
 };
 
-exports.isUrlInList = function(){
+exports.isUrlInList = function(url,cb){
+  var isInList = false;
+  fs.readFile(__dirname+'/../archives/sites.txt', 'utf8', function(err,data) {
+    if (err) console.log('Error reading sites.txt: '+err);
+
+    var arrayOfSites = (data === null) ? [] : data.split("\n");
+    if (arrayOfSites.indexOf(url)>-1) {
+      isInList = true;
+    }
+    cb(isInList);
+  });
 };
 
 exports.addUrlToList = function(){

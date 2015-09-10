@@ -1,0 +1,42 @@
+child_process: customFds option is deprecated, use stdio instead.
+[31m  5 failing[0m
+
+[0m  1) server archived websites POST should append submitted sites to 'sites.txt':
+[0m[31m     Uncaught TypeError: Cannot read property 'toString' of undefined[0m[90m
+      at /home/james/hackreactor/2015-08-web-historian/web/request-handler.js:81:67
+      at fs.js:334:14
+      at /home/james/hackreactor/2015-08-web-historian/node_modules/mocha/node_modules/glob/node_modules/graceful-fs/graceful-fs.js:104:5
+      at FSReqWrap.oncomplete (fs.js:95:15)
+[0m
+[0m  2) archive helpers #readListOfUrls should read urls from sites.txt:
+[0m[31m     Error: timeout of 2000ms exceeded[0m[90m
+      at null.<anonymous> (/home/james/hackreactor/2015-08-web-historian/node_modules/mocha/lib/runnable.js:158:19)
+      at Timer.listOnTimeout (timers.js:119:15)
+[0m
+[0m  3) archive helpers #addUrlToList should add a url to the list:
+[0m[31m     Error: timeout of 2000ms exceeded[0m[90m
+      at null.<anonymous> (/home/james/hackreactor/2015-08-web-historian/node_modules/mocha/lib/runnable.js:158:19)
+      at Timer.listOnTimeout (timers.js:119:15)
+[0m
+[0m  4) archive helpers #isUrlArchived should check if a url is archived:
+[0m[31m     Error: timeout of 2000ms exceeded[0m[90m
+      at null.<anonymous> (/home/james/hackreactor/2015-08-web-historian/node_modules/mocha/lib/runnable.js:158:19)
+      at Timer.listOnTimeout (timers.js:119:15)
+[0m
+[0m  5) archive helpers #downloadUrls should download all pending urls in the list:
+
+      [31mUncaught AssertionError: expected [ 'www.example.com' ] to deeply equal [ 'www.example.com', 'www.google.com' ][0m
+      [42m+ expected[0m [41m- actual[0m
+
+       [
+         "www.example.com"
+      [42m+  "www.google.com"[0m
+       ]
+      [0m[90m
+      at Assertion.assertEqual (/home/james/hackreactor/2015-08-web-historian/node_modules/chai/lib/chai/core/assertions.js:427:19)
+      at Assertion.ctx.(anonymous function) [as equal] (/home/james/hackreactor/2015-08-web-historian/node_modules/chai/lib/chai/utils/addMethod.js:40:25)
+      at null._onTimeout (/home/james/hackreactor/2015-08-web-historian/test/test.js:147:69)
+      at Timer.listOnTimeout (timers.js:119:15)
+[0m
+
+npm ERR! Test failed.  See above for more details.

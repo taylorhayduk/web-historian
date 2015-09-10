@@ -1,0 +1,37 @@
+
+> web-historian@1.0.1 test /home/james/hackreactor/2015-08-web-historian
+> mocha test
+
+
+[0m[0m
+[0m  server[0m
+[0m    GET /[0m
+Received request for / via GET
+    [32m  ✓[0m[90m should return the content of index.html [0m[33m(48ms)[0m
+[0m    archived websites[0m
+[0m      GET[0m
+Received request for /www.google.com via GET
+      [32m  ✓[0m[90m should return the content of a website from the archive [0m
+Received request for /arglebargle via GET
+      [32m  ✓[0m[90m Should 404 when asked for a nonexistent file [0m
+[0m      POST[0m
+Received request for / via POST
+{"url":"www.example.com"}
+[ 'test', '' ]
+      [31m  1) should append submitted sites to 'sites.txt'[0m
+
+[0m  archive helpers[0m
+[0m    #readListOfUrls[0m
+    [31m  2) should read urls from sites.txt[0m
+[0m    #isUrlInList[0m
+    [32m  ✓[0m[90m should check if a url is in the list [0m
+[0m    #addUrlToList[0m
+    [31m  3) should add a url to the list[0m
+[0m    #isUrlArchived[0m
+    [31m  4) should check if a url is archived[0m
+[0m    #downloadUrls[0m
+    [31m  5) should download all pending urls in the list[0m
+
+
+[92m [0m[32m 4 passing[0m[90m (6s)[0m
+
